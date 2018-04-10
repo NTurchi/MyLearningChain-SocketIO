@@ -3,7 +3,7 @@ var socket = require("socket.io-client");
 // global variable
 var app = express();
 var port = 3710;
-var io = socket.connect("http://localhost:3700");
+var io = socket.connect("http://51.136.10.20:4000");
 io.on("connect", function (data) {
     console.log("My id : " + io.id);
     console.log("Socket connection success !");
