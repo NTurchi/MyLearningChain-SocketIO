@@ -6,7 +6,8 @@ var ss = require("./services/socketServer");
 // global variable
 var app = express();
 app.use(function (request, response, next) {
-    response.header("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Origin', req.header('origin') ||
+        req.header('x-forwarded-host') || req.header('referer') || req.header('host'));
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
