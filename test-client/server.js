@@ -3,8 +3,8 @@ var socket = require("socket.io-client");
 // global variable
 var app = express();
 var port = 3710;
-//var io = socket.connect("http://51.136.10.20:4000");
-var io = socket.connect("http://localhost:4000");
+var io = socket.connect("http://51.136.10.20:4000");
+//var io = socket.connect("http://localhost:4000");
 
 io.on("connect", function (data) {
     console.log("My id : " + io.id);
@@ -25,14 +25,14 @@ io.on("connect", function (data) {
         project: "Workshop B3",
         message: "Pensez-vous qu'il est possible de manger du poisson", // optionnel pour l'instant
         senderName: "Nicolas Turchi",
-        userIds: ['averdier']
+        userIds: ['rstudent']
     });
 
     // test needAssistance message
     io.emit("needAssistance", {
         projectName: "Workshop B3",
         teamName: "The Slaves",
-        intervenant: "averdier"
+        intervenant: "rstudent"
     });
 
     io.emit("kk", {

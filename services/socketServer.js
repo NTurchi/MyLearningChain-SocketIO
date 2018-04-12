@@ -1,5 +1,7 @@
 // Require module
-var socketio = require('socket.io');
+var socketio = require('socket.io')({
+    origins: '*:*'
+});
 var lcReq = require("./learningChainRequest");
 var socketStorage = require("./socketStorage").socketStorage();
 var logger = require("../utils/logger").logger;
@@ -36,9 +38,12 @@ var socketServer = function (app) {
          * Data should be : 
          * {
          *      "assistance": "Nom intervention",
-         *      "project": "project name"
+         *      "project": "project name",
+         *      "creationDate": "",
+         *      
          *      "message": "Message content tchat"
          *      "senderName": "Sender username",
+         *      "senderId": senderId,
          *      "userIds": []
          * }
          */
