@@ -18,9 +18,10 @@ var socketServer = function (app) {
             try {
                 lcReq.verifyToken(data.token).then(function (res) {
                     // register client for notification
-                    socketStorage.set.client(res.id, client.id);
+                    socketStorage.set.client(res.id.username, client.id);
                     logger.debug(`Registered clients : ${socketStorage.get.connectedClients()}`);
                 });
+                client.emit("good", "message");
             } catch (e) {
                 logError("register", e.message);
             }
@@ -34,17 +35,18 @@ var socketServer = function (app) {
         /**
          * Data should be : 
          * {
-         *      "intervention": "Nom intervention",
-         *      "projet": "project name"
+         *      "assistance": "Nom intervention",
+         *      "project": "project name"
          *      "message": "Message content tchat"
-         *      "senderName": "Sender username"
+         *      "senderName": "Sender username",
+         *      "userIds": []
          * }
          */
         client.on('newMessage', function (data) {
             try {
-                logger.debug(`New message from client [${client.id}] in intervention ${data.idIntervention}`);
+                logger.debug(`New message from client [${client.id}] in intervention ${data.assistance}`);
                 data.userIds.forEach(idUser => {
-                    socketStorage.getClient(idUser).forEach((socketId) => {
+                    socketStorage.get.client(idUser).forEach((socketId) => {
                         sendToClient(socketId, "newMessage", data);
                     });
                 });
@@ -56,16 +58,15 @@ var socketServer = function (app) {
         /**
          * When group ask for an intervention
          * data should be : {
-         *     idIntervenant: 10,
+         *     Intervenant: 10, // OR Username
          *     projectName: "projectName",
-         *     teamName: "teamName",
-         *  
+         *     teamName: "teamName"
          * }
          */
         client.on('needAssistance', function (data) {
             try {
-                logger.debug(`Team [${data.teamName}] asks for assistance to [${data.idIntervenant}] for project [${projectName}]`);
-                socketStorage.getClient(data.idIntervenant).forEach((socketId) => {
+                logger.debug(`Team [${data.teamName}] asks for assistance to [${data.intervenant}] for project [${data.projectName}]`);
+                socketStorage.get.client(data.intervenant).forEach((socketId) => {
                     sendToClient(socketId, "needAssistance", data);
                 });
             } catch (e) {

@@ -14,7 +14,8 @@ var options = {
         level: 'debug',
         handleExceptions: true,
         json: false,
-        colorize: true
+        colorize: true,
+        timestamp: true,
     }
 };
 

@@ -1,0 +1,394 @@
+<div ui-view="" autoscroll="true" autoscroll-body-top="" class="ng-scope" style="">
+    <div ba-panel="" ba-panel-class="profile-page" class="ng-scope">
+        <div class="panel panel-blur profile-page animated zoomIn" zoom-in="" ba-panel-blur="" style="background-size: 1519px 854px; background-position: 0px -64px;">
+            <div class="panel-body" ng-transclude="">
+                <div class="panel-content ng-scope">
+                    <div class="progress-info">Your profile is 70% Complete</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 70%"></div>
+                    </div>
+                    <h3 class="with-line">General Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label for="inputFirstName" class="col-sm-3 control-label">Picture</label>
+                                <div class="col-sm-9">
+                                    <div class="userpic">
+                                        <div class="userpic-wrapper">
+                                            <img ng-src="assets/img/app/profile/Nasta.png" ng-click="uploadPicture()" src="assets/img/app/profile/Nasta.png">
+                                        </div>
+                                        <!-- ngIf: !noPicture -->
+                                        <i class="ion-ios-close-outline ng-scope" ng-click="removePicture()" ng-if="!noPicture"></i>
+                                        <!-- end ngIf: !noPicture -->
+                                        <a href="" class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+                                        <input ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)" class="ng-hide" type="file">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label for="inputFirstName" class="col-sm-3 control-label">First Name</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputFirstName" placeholder="" value="Anastasiya" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label for="inputLastName" class="col-sm-3 control-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputLastName" placeholder="" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label class="col-sm-3 control-label">Department</label>
+                                <div class="col-sm-9">
+                                    <div class="btn-group bootstrap-select form-control">
+                                        <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Web Development">
+                                            <span class="filter-option pull-left">Web Development</span>&nbsp;
+                                            <span class="bs-caret">
+                                                <span class="caret"></span>
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu open" role="combobox">
+                                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                                <li data-original-index="0" class="selected">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                        <span class="text">Web Development</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="1">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">System Development</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="2">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">Sales</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="3">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">Human Resources</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <select class="form-control" selectpicker="" tabindex="-98">
+                                            <option value="Web Development">Web Development</option>
+                                            <option value="System Development">System Development</option>
+                                            <option value="Sales">Sales</option>
+                                            <option value="Human Resources">Human Resources</option>
+                                            <option data-hidden="true" disabled="" value="">Select something</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label for="inputOccupation" class="col-sm-3 control-label">Occupation</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputOccupation" placeholder="" value="Front End Web Developer" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="with-line">Change Password</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputPassword" placeholder="" value="12345678" type="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputConfirmPassword" placeholder="" type="password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="with-line">Contact Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputEmail3" placeholder="" value="contact@akveo.com" type="email">
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label for="inputPhone" class="col-sm-3 control-label">Phone</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputPhone" placeholder="" value="+1 (23) 456 7890" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row clearfix">
+                                <label class="col-sm-3 control-label">Office Location</label>
+                                <div class="col-sm-9">
+                                    <div class="btn-group bootstrap-select form-control">
+                                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" title="Standard Select">
+                                            <span class="filter-option pull-left">Standard Select</span>&nbsp;
+                                            <span class="bs-caret">
+                                                <span class="caret"></span>
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu open" role="combobox">
+                                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                                <li data-original-index="1">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">San Francisco</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="2">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">London</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="3">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">Minsk</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="4">
+                                                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                        <span class="text">Tokio</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <select class="form-control" title="Standard Select" selectpicker="" tabindex="-98">
+                                            <option class="bs-title-option" value="">Standard Select</option>
+                                            <option value="San Francisco">San Francisco</option>
+                                            <option value="London">London</option>
+                                            <option value="Minsk">Minsk</option>
+                                            <option value="Tokio">Tokio</option>
+                                            <option data-hidden="true" disabled="" value="">Standard Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label for="inputRoom" class="col-sm-3 control-label">Room</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="inputRoom" placeholder="" value="303" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="with-line">Social Profiles</h3>
+                    <div class="social-profiles row clearfix">
+                        <!-- ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                            <a class="sn-link connected ng-scope" href="https://www.facebook.com/akveo/" target="_blank" ng-if="item.href">
+                                <i class="socicon socicon-facebook"></i>
+                                <span class="ng-binding">Facebook</span>
+                                <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
+                            </a>
+                            <!-- end ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                            <a class="sn-link connected ng-scope" href="https://twitter.com/akveo_inc" target="_blank" ng-if="item.href">
+                                <i class="socicon socicon-twitter"></i>
+                                <span class="ng-binding">Twitter</span>
+                                <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
+                            </a>
+                            <!-- end ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <a class="sn-link ng-scope" href="" ng-click="showModal(item)" ng-if="!item.href">
+                                <i class="socicon socicon-google"></i>
+                                <span class="ng-binding">Google</span>
+                            </a>
+                            <!-- end ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                            <a class="sn-link connected ng-scope" href="https://www.linkedin.com/company/akveo" target="_blank" ng-if="item.href">
+                                <i class="socicon socicon-linkedin"></i>
+                                <span class="ng-binding">LinkedIn</span>
+                                <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
+                            </a>
+                            <!-- end ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                            <a class="sn-link connected ng-scope" href="https://github.com/akveo" target="_blank" ng-if="item.href">
+                                <i class="socicon socicon-github"></i>
+                                <span class="ng-binding">GitHub</span>
+                                <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
+                            </a>
+                            <!-- end ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <a class="sn-link ng-scope" href="" ng-click="showModal(item)" ng-if="!item.href">
+                                <i class="socicon socicon-stackoverflow"></i>
+                                <span class="ng-binding">StackOverflow</span>
+                            </a>
+                            <!-- end ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <a class="sn-link ng-scope" href="" ng-click="showModal(item)" ng-if="!item.href">
+                                <i class="socicon socicon-dribble"></i>
+                                <span class="ng-binding">Dribbble</span>
+                            </a>
+                            <!-- end ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                        <div class="col-md-3 col-sm-4 ng-scope" ng-repeat="item in socialProfiles">
+                            <!-- ngIf: !item.href -->
+                            <a class="sn-link ng-scope" href="" ng-click="showModal(item)" ng-if="!item.href">
+                                <i class="socicon socicon-behace"></i>
+                                <span class="ng-binding">Behance</span>
+                            </a>
+                            <!-- end ngIf: !item.href -->
+                            <!-- ngIf: item.href -->
+                        </div>
+                        <!-- end ngRepeat: item in socialProfiles -->
+                    </div>
+                    <h3 class="with-line">Send Email Notifications</h3>
+                    <div class="notification row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">When I receive a message</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[0]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-not-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">When Someone sends me an invitation</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[1]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-not-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">When profile information changes</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[2]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">When anyone logs into your account from a new device or browser</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[3]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-not-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">Weekly Reports</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[4]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-not-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row clearfix">
+                                <label class="col-xs-8">Daily Reports</label>
+                                <div class="col-xs-4">
+                                    <div class="switch-container primary ng-isolate-scope ng-not-empty ng-valid" color="primary" ng-model="switches[5]">
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-small bootstrap-switch-animate"
+                                            style="width: 84.6333px;">
+                                            <div class="bootstrap-switch-container" style="width: 124.55px; margin-left: -41.5167px;">
+                                                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 41.5167px;">ON</span>
+                                                <span class="bootstrap-switch-label" style="width: 41.5167px;">&nbsp;</span>
+                                                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 41.5167px;">OFF</span>
+                                                <input ng-model="ngModel" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-with-icon save-profile">
+                        <i class="ion-android-checkmark-circle"></i>Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
