@@ -20,7 +20,7 @@ var socketServer = function (app) {
             try {
                 lcReq.verifyToken(data.token).then(function (res) {
                     // register client for notification
-                    socketStorage.set.client(res.id.username, client.id);
+                    socketStorage.set.client(res.id.id, client.id);
                     logger.debug(`Registered clients : ${socketStorage.get.connectedClients()}`);
                 });
                 client.emit("good", "message");
