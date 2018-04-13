@@ -1,9 +1,9 @@
 module.exports.config = {
-    uriBase: "http://51.136.10.20/mylearningback/",
+    uriBase: "http://mlcback.westeurope.cloudapp.azure.com/",
     apiRoutes: {
         auth: {
             verifyToken: {
-                uri: "pub/auth/verify_token",
+                uri: "auth/api/auth/verify_token",
                 method: "POST",
                 contentType: "application/json"
             }
